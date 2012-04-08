@@ -1,0 +1,27 @@
+﻿
+
+@model dynamic
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutPadrao.cshtml";
+}
+
+  <h2>@ViewBag.Texto</h2>
+    
+    
+    @section cabecalho{
+        <h1>Este é o cabecalho de uma das páginas</h1>
+    }
+
+    <ul>
+        @foreach(var news in ViewBag.Novidades){
+            <li>@news</li>
+        }
+    </ul>
+
+    @section rodape{
+        <i>Quer saber mais sobre MVC3?
+        <span style="color:#009ACD;">
+            http://viniciusquaiato.com</span></i>
+    }
