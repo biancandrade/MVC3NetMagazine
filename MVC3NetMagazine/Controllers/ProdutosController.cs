@@ -9,10 +9,6 @@ namespace MVC3NetMagazine.Controllers
         //
         // GET: /Produto/
 
-        public ActionResult Index()
-        {
-            return View();
-        }
 
         public ActionResult Listar()
         {

@@ -1,8 +1,8 @@
 ﻿@model IEnumerable <MVC3NetMagazine.Models.Produto>
 
 @{
-    Layout = null;
-}
+    Layout = "~/Views/Shared/LayoutPadrao.cshtml";
+ }
 
 <!DOCTYPE html>
 
@@ -10,38 +10,41 @@
     <head>
         <title>Listar</title>
     </head>
-    
         @{
             var maiorValor = Model.Max(p => p.Valor);
             var menorValor = Model.Min(p => p.Valor);
         }
-
     <body>
-    <div>
-        <ul>
-                 @foreach(var produto in Model){
-                     <li>
-                         @produto.Id.ToString("000") -
+        @section cabecalho{
+            <h1>Listar produtos</h1>
+        }
+        <div>
+            <ul>
+                @foreach(var produto in Model){ 
+                    <li>
+                        @produto.Id.ToString("000") -
                          
-                         @if (produto.Valor == maiorValor)
-                         {
-                             <strong>@produto.Descricao</strong>
-                         }else
-                         {
+                        @if (produto.Valor == maiorValor)
+                        {
+                            <strong>@produto.Descricao</strong>
+                        }else
+                        {
                             @produto.Descricao 
-                         }
-                           -  
-                         <span style="color:#006600;">R$ @produto.Valor.ToString("N2")</span>
+                        }
+                        -  
+                        <span style="color:#006600;">R$ @produto.Valor.ToString("N2")</span>
                          
-                         @if(produto.Valor == menorValor)
-                         {
-                             <span style="color:red"><strong>Oferta!!</strong></span>
-                         }
+                        @if(produto.Valor == menorValor)
+                        {
+                            <span style="color:red"><strong>Oferta!!</strong></span>
+                        }
 
-                     </li>
+                    </li>
                 }
             </ul>
-
-    </div>
-</body>
+            @section rodape{
+                <i>Quer saber mais sobre MVC3?<span style="color:#009ACD;">http://viniciusquaiato.com</span></i>
+            }
+        </div>
+    </body>
 </html>

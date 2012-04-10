@@ -1,0 +1,4 @@
+<Modules>
+  <Module PersistentId="6FDBB6CD-0317-4C4E-94AD-002FC7B4615E" ModuleId="MVC3NetMagazine" />
+  <Module PersistentId="857117EF-78F6-4388-ADF5-CE762C703B41" ModuleId="MVC3NetMagazine.Tests" />
+</Modules>
